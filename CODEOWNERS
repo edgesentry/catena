@@ -4,9 +4,8 @@
 # Capability boundaries
 /apps/ @yohei1126
 /pipeline/ @yohei1126
-/document/ @yohei1126
+/agents/ @yohei1126
 /contracts/ @yohei1126
 /shared/ @yohei1126
-/programs/ @yohei1126
 /ci/ @yohei1126
 /tools/ @yohei1126

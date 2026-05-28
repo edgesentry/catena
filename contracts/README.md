@@ -1,6 +1,6 @@
 # contracts
 
-Canonical interface contracts shared across pipeline, document, and apps.
+Canonical interface contracts shared across pipeline, agents, and apps.
 
 ## Baseline schemas
 

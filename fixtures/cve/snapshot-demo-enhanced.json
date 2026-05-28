@@ -1,0 +1,115 @@
+{
+  "snapshot_id": "demo-enhanced-2026-05-27",
+  "schema": "OSV",
+  "description": "Pinned demo-enhanced subset — multiple Maven packages for fleet fixture validation (not full NVD)",
+  "vulnerabilities": [
+    {
+      "id": "GHSA-jfhr-c2vg-8q4j",
+      "aliases": ["CVE-2021-44228"],
+      "summary": "Apache Log4j2 remote code execution (Log4Shell)",
+      "severity": "CRITICAL",
+      "database_specific": { "cvss_score": 10.0, "in_kev": true },
+      "affected": [
+        {
+          "package": { "ecosystem": "Maven", "name": "org.apache.logging.log4j:log4j-core" },
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [{ "introduced": "2.0-beta9" }, { "fixed": "2.15.0" }]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "GHSA-599f-7m4x-7w7m",
+      "aliases": ["CVE-2022-42889"],
+      "summary": "Apache Commons Text variable interpolation RCE",
+      "severity": "CRITICAL",
+      "database_specific": { "cvss_score": 9.8, "in_kev": true },
+      "affected": [
+        {
+          "package": { "ecosystem": "Maven", "name": "org.apache.commons:commons-text" },
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [{ "introduced": "1.5" }, { "fixed": "1.10.0" }]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "GHSA-4qrg-393v-7x4j",
+      "aliases": ["CVE-2022-23305"],
+      "summary": "Log4j JDBCAppender SQL injection",
+      "severity": "HIGH",
+      "database_specific": { "cvss_score": 8.8, "in_kev": false },
+      "affected": [
+        {
+          "package": { "ecosystem": "Maven", "name": "org.apache.logging.log4j:log4j-core" },
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [{ "introduced": "2.0-beta7" }, { "fixed": "2.17.1" }]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "GHSA-7rjr-3q55-vv33",
+      "aliases": ["CVE-2021-45105"],
+      "summary": "Log4j denial of service via thread context",
+      "severity": "HIGH",
+      "database_specific": { "cvss_score": 7.5, "in_kev": false },
+      "affected": [
+        {
+          "package": { "ecosystem": "Maven", "name": "org.apache.logging.log4j:log4j-core" },
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [{ "introduced": "2.0-beta7" }, { "fixed": "2.17.0" }]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "GHSA-6xx3-rg99-gc3p",
+      "aliases": ["CVE-2020-36518"],
+      "summary": "Jackson databind depth nesting DoS",
+      "severity": "HIGH",
+      "database_specific": { "cvss_score": 7.5, "in_kev": false },
+      "affected": [
+        {
+          "package": { "ecosystem": "Maven", "name": "com.fasterxml.jackson.core:jackson-databind" },
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [{ "introduced": "2.0.0" }, { "fixed": "2.13.2.2" }]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "GHSA-3p8m-9cfc-9mvm",
+      "aliases": ["CVE-2023-20863"],
+      "summary": "Spring Framework SpEL expression DoS",
+      "severity": "MEDIUM",
+      "database_specific": { "cvss_score": 6.5, "in_kev": false },
+      "affected": [
+        {
+          "package": { "ecosystem": "Maven", "name": "org.springframework:spring-core" },
+          "ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [{ "introduced": "6.0.0" }, { "fixed": "6.0.7" }]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

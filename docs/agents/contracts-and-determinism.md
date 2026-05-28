@@ -29,6 +29,6 @@ Key deterministic concerns:
 ## Change sequence for contract-impacting work
 
 1. Update schema contracts.
-2. Update producers (pipeline/document) to match.
+2. Update producers (pipeline, `edgesentry-rs` render/seal) to match.
 3. Update consumers and docs.
 4. Run validations/tests and report compatibility notes.

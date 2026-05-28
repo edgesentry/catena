@@ -1,0 +1,32 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "catena"
+version = "0.1.0"
+description = "EdgeSentry monorepo — port cyber clearance pipeline (maritime_cyber)"
+requires-python = ">=3.12"
+dependencies = [
+    "polars>=1.0",
+    "pyarrow>=17.0",
+    "pyyaml>=6.0",
+    "networkx>=3.2",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=9.0"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["pipeline", "agents"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+markers = [
+    "integration: tests that need sibling repos or built eds binary",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
