@@ -25,10 +25,13 @@ See `pipeline/README.md` and `ci/README.md`.
 ## Verify locally
 
 ```bash
-make test-all              # contracts + unit pipeline + document + integration
+make test-all              # contracts + unit pipeline + integration (+ apps noop)
 make test-pipeline         # unit tests only (no eds)
 make test-integration      # eds sign/verify/render integration
 make test-e2e vessel-hold  # full clearance smoke
 ```
 
-Requires sibling `../edgesentry-rs` for document/integration/e2e targets.
+Requires `../edgesentry-rs` (built `eds`) for `test-integration` / `test-e2e`.
+Run `cargo test` on edgesentry-rs in that repo.
+
+**Not in catena CI:** edgesentry-rs crate tests, documaris UI tests.

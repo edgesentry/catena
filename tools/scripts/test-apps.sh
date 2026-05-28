@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-# Phase C — apps / documaris (pointer only; no vendored UI tests in catena yet).
+# apps/ is a pointer to documaris W5 templates — not vendored in catena.
+# Port-cyber behaviour migrated to catena is tested under pipeline/ + agents/.
 set -euo pipefail
-echo "apps: no automated tests in catena (W5 templates live in ../documaris)"
+echo "apps/: pointer only (documaris W5 HTML templates); see ../documaris CI"
 exit 0

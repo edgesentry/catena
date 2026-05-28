@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-# Phase D — catena evaluation ↔ eds sign/verify/render (requires edgesentry-rs).
+# Catena boundary tests: evaluation artefacts ↔ eds CLI (build eds only as fixture).
+# Crate tests for edgesentry-rs stay in the edgesentry-rs repo CI.
 set -euo pipefail
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 ERS="${CATENA_EDGESENTRY_RS:-${ROOT}/../edgesentry-rs}"

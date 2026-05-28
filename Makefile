@@ -1,14 +1,11 @@
 # Verification entrypoints (catena issue #1 Phase C–D).
-.PHONY: test-contracts test-pipeline test-document test-integration test-e2e test-apps test-all
+.PHONY: test-contracts test-pipeline test-integration test-e2e test-apps test-all
 
 test-contracts:
 	./tools/scripts/test-contracts.sh
 
 test-pipeline:
 	./tools/scripts/test-pipeline.sh
-
-test-document:
-	./tools/scripts/test-document.sh
 
 test-integration:
 	./tools/scripts/test-integration.sh

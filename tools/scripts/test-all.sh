@@ -6,7 +6,6 @@ cd "${ROOT}"
 scripts=(
   test-contracts.sh
   test-pipeline.sh
-  test-document.sh
   test-integration.sh
   test-apps.sh
 )
