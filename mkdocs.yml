@@ -1,0 +1,13 @@
+site_name: catena docs
+site_description: catena monorepo agent and platform documentation
+repo_url: https://github.com/edgesentry/catena
+theme:
+  name: material
+
+nav:
+  - Home: index.md
+  - Agent Docs:
+      - Overview: agents/index.md
+      - Task Routing: agents/task-routing.md
+      - Change Policy: agents/change-policy.md
+      - Contracts and Determinism: agents/contracts-and-determinism.md

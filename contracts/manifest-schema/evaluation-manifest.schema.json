@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://edgesentry.io/contracts/evaluation-manifest.schema.json",
+  "title": "Evaluation manifest",
+  "type": "object",
+  "required": [
+    "vessel_key",
+    "port_call_id",
+    "outcome",
+    "rule_pack_id",
+    "integrated_snapshot_fingerprint"
+  ],
+  "properties": {
+    "vessel_key": {
+      "type": "string",
+      "minLength": 1
+    },
+    "port_call_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "outcome": {
+      "type": "string",
+      "enum": [
+        "pass",
+        "hold"
+      ]
+    },
+    "rule_pack_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "integrated_snapshot_fingerprint": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    }
+  },
+  "additionalProperties": true
+}
