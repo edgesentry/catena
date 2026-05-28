@@ -11,8 +11,10 @@ Use this document to map a task to the right repository area and checks.
   - Domain: deterministic evaluation, graph export, fixture generation
   - Typical checks: pipeline tests and reproducibility checks
 - `agents/port_clearance/**` (render/seal via sibling `edgesentry-rs`)
-  - Domain: E2E clearance orchestration; HTML/PDF via `eds document render-clearance`
-  - Typical checks: `uv run pytest tests/maritime_cyber`; Rust: `cargo test` in `../edgesentry-rs` when changing crates
+  - Domain: E2E clearance orchestration
+  - HTML/PDF: `eds document render-clearance`
+  - Typical checks: `uv run pytest tests/maritime_cyber`
+  - Rust: `cargo test` in `../edgesentry-rs` when changing crates
 - `contracts/**`
   - Domain: schema and interface contracts
   - Typical checks: contract validation + downstream impact checks
@@ -28,7 +30,8 @@ Use this document to map a task to the right repository area and checks.
 If a task touches multiple domains:
 
 1. Update contracts first (if needed).
-2. Update producers (pipeline, then `edgesentry-rs` if facts/manifest or render contracts change) next.
+2. Update producers (`pipeline`, then `edgesentry-rs` if facts/manifest or
+   render contracts change) next.
 3. Update consumers (apps/programs) last.
 4. Run checks in dependency order.
 
