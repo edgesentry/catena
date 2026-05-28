@@ -63,15 +63,15 @@ uv run python -m agents.port_clearance.run_clearance vessel-hold --skip-worm
 uv run python -m agents.port_clearance.run_clearance vessel-hold \
   --skip-graph-export
 
-# Copy graph HTML to documaris / commercial artefacts
+# Copy graph HTML to operations-console / commercial artefacts
 uv run python -m agents.port_clearance.run_clearance vessel-hold \
-  --copy-graph-to-documaris
+  --copy-graph-to-operations-console
 uv run python -m agents.port_clearance.run_clearance vessel-hold \
   --copy-graph-to-capvista-submission
 
 # D4 standalone
 uv run python -m pipeline.export_vessel_graph vessel-hold \
-  --copy-to-documaris-dist --copy-to-capvista-submission
+  --copy-to-operations-console-dist --copy-to-capvista-submission
 
 # D5 operator explanation
 uv run python -m agents.port_clearance.run_clearance vessel-hold \
@@ -120,7 +120,8 @@ Unless `--skip-graph-export`:
 - `<prefix>_impacted_paths.json` — `impacted_paths[]` from facts
 - `<prefix>_impacted-path.html` — Component → CVE → Asset → Vessel
 
-`--copy-graph-to-documaris` → `documaris/dist/<vessel>_impacted-path.html`
+`--copy-graph-to-operations-console` →
+`apps/operations-console/dist/<vessel>_impacted-path.html`
 
 ## Run outputs (prefix `vessel-hold_port-call-demo-sgsin`)
 
@@ -139,5 +140,5 @@ Unless `--skip-graph-export`:
 
 - W3: `pipeline/port_clearance_eval.py`
 - W4: `edgesentry-rs/docs/port-cyber-clearance-audit.md`
-- W5: `documaris/dist/*_port-cyber-clearance.html`
+- W5: `apps/operations-console/dist/*_port-cyber-clearance.html`
 - Tests: `tests/maritime_cyber/README.md`

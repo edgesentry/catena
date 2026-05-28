@@ -31,5 +31,5 @@ uv run pytest tests/maritime_cyber -q
 ## Sibling repos
 
 - `../edgesentry-rs` — `eds` render-clearance, sign-clearance
-- `../documaris/dist` — HTML bundles from `export_vessel_graph.py`
+- `apps/operations-console/dist` — W5 clearance + D4 graph HTML bundles
 - `../edgesentry-commercial/.../submission/artefacts` — CapVista artefacts

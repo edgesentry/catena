@@ -26,4 +26,4 @@ fi
 export EDS_BIN
 cd "${ROOT}"
 uv sync --extra test --quiet
-uv run pytest tests/maritime_cyber -m integration -q "$@"
+uv run pytest tests/maritime_cyber tests/apps -m integration -q "$@"
