@@ -10,12 +10,10 @@ if [[ ! -f "${ERS}/Cargo.toml" ]]; then
   exit 1
 fi
 
-if [[ -z "${EDS_BIN:-}" ]]; then
-  EDS_BIN="${ERS}/target/debug/eds"
-  if [[ ! -x "${EDS_BIN}" ]]; then
-    echo "building eds..."
-    cargo build -p eds --manifest-path "${ERS}/Cargo.toml"
-  fi
+EDS_BIN="${EDS_BIN:-${ERS}/target/debug/eds}"
+if [[ ! -x "${EDS_BIN}" ]]; then
+  echo "building eds..."
+  cargo build -p eds --manifest-path "${ERS}/Cargo.toml"
 fi
 
 if [[ ! -x "${EDS_BIN}" ]]; then
