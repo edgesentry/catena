@@ -2,6 +2,8 @@
 
 Capability-based monorepo for EdgeSentry platform delivery.
 
+Agent guidance entrypoint: `AGENTS.md`
+
 ## Repository layout
 
 - `apps/` - browser-facing products and frontends
