@@ -6,7 +6,6 @@ import json
 from pathlib import Path
 
 import jsonschema
-import pytest
 
 from pipeline.maritime_cyber.eval import evaluate_port_clearance, write_evaluation_artifacts
 from pipeline.maritime_cyber.graph import build_maritime_cyber_graph
