@@ -1,15 +1,15 @@
 # ci
 
-Phase C verification entrypoints. GitHub Actions in `.github/workflows/ci.yml`
-call the same scripts as local `make` targets.
+GitHub Actions in `.github/workflows/ci.yml` call the same scripts as `make`.
 
 | Local | Script | CI job |
 |-------|--------|--------|
-| `make test-contracts` | `tools/scripts/test-contracts.sh` | `contracts-check` |
-| `make test-pipeline` | `tools/scripts/test-pipeline.sh` | `pipeline-check` |
-| `make test-document` | `tools/scripts/test-document.sh` | `document-check` |
-| `make test-apps` | `tools/scripts/test-apps.sh` | `apps-check` |
-| `make test-all` | `tools/scripts/test-all.sh` | (local aggregate) |
+| `make test-contracts` | `test-contracts.sh` | `contracts-check` |
+| `make test-pipeline` | `test-pipeline.sh` | `pipeline-check` (unit only) |
+| `make test-document` | `test-document.sh` | `document-check` |
+| `make test-integration` | `test-integration.sh` | `integration-check` |
+| `make test-e2e` | `test-e2e.sh` | `e2e-check` (main push only) |
+| `make test-apps` | `test-apps.sh` | `apps-check` |
 
-**document-check** checks out `edgesentry/edgesentry-rs` and runs clearance
-`cargo test` (no legacy indago tree required in CI).
+**integration-check** builds `eds` from `edgesentry/edgesentry-rs` and runs all
+`pytest -m integration` tests (no skips).

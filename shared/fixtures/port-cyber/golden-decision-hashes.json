@@ -1,4 +1,5 @@
 {
+  "contract_version": "0.1.0",
   "description": "Pinned decision_hash values for PoC fixtures (seed-stable eval).",
   "port_call_id": "port-call-demo-sgsin",
   "vessels": {

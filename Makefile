@@ -1,5 +1,5 @@
-# Phase C unified verification entrypoints (see issue #1).
-.PHONY: test-contracts test-pipeline test-document test-apps test-all
+# Verification entrypoints (catena issue #1 Phase C–D).
+.PHONY: test-contracts test-pipeline test-document test-integration test-e2e test-apps test-all
 
 test-contracts:
 	./tools/scripts/test-contracts.sh
@@ -9,6 +9,12 @@ test-pipeline:
 
 test-document:
 	./tools/scripts/test-document.sh
+
+test-integration:
+	./tools/scripts/test-integration.sh
+
+test-e2e:
+	./tools/scripts/test-e2e.sh
 
 test-apps:
 	./tools/scripts/test-apps.sh

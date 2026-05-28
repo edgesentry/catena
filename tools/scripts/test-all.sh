@@ -7,6 +7,7 @@ scripts=(
   test-contracts.sh
   test-pipeline.sh
   test-document.sh
+  test-integration.sh
   test-apps.sh
 )
 for s in "${scripts[@]}"; do
