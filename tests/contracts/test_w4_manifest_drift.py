@@ -5,8 +5,6 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-import pytest
-
 from pipeline.maritime_cyber.eval import _canonical_hash, evaluate_port_clearance, write_evaluation_artifacts
 from pipeline.maritime_cyber.graph import build_maritime_cyber_graph
 
