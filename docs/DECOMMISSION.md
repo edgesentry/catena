@@ -1,7 +1,7 @@
 # Port Cyber migration — decommission checklist
 
 - **Tracker:** [catena#1](https://github.com/edgesentry/catena/issues/1)
-- **Authority:** [edgesentry-commercial monorepo plan](https://github.com/edgesentry/edgesentry-commercial/blob/main/docs/programs/20260630-capvista-products/analysis/monorepo-design-implementation-plan.md) §10
+- **Authority:** edgesentry-commercial monorepo plan §10 (analysis pack)
 
 Canonical implementation: **this repo** (`pipeline/`, `agents/port_clearance/`,
 `apps/operations-console/`). Sibling **edgesentry-rs** remains required for
@@ -13,10 +13,10 @@ Canonical implementation: **this repo** (`pipeline/`, `agents/port_clearance/`,
 
 Before freezing legacy **indago** port-cyber paths:
 
-- [x] Phase A–D merged to `catena` `main` ([#2](https://github.com/edgesentry/catena/pull/2) … [#6](https://github.com/edgesentry/catena/pull/6))
+- [x] Phase A–D on `main` ([#2](https://github.com/edgesentry/catena/pull/2) … [#6](https://github.com/edgesentry/catena/pull/6))
 - [x] W5 UI contract in `apps/operations-console/` + `tests/apps`
-- [x] CI: `contracts-check`, `pipeline-check`, `apps-check`, `integration-check`
-- [x] Analysis docs: [system-overview](https://github.com/edgesentry/edgesentry-commercial/blob/main/docs/programs/20260630-capvista-products/analysis/system-overview.md) ([commercial#169](https://github.com/edgesentry/edgesentry-commercial/pull/169))
+- [x] CI: contracts, pipeline, apps, integration checks
+- [x] Analysis docs updated (system-overview; commercial#169)
 - [ ] `main` `e2e-check` green once (push-triggered job)
 - [ ] Owner sign-off on migration complete gate
 
@@ -58,3 +58,9 @@ git clone https://github.com/edgesentry/edgesentry-rs.git ../edgesentry-rs
 make test-all
 make test-e2e vessel-hold   # optional smoke
 ```
+
+## References
+
+- [system-overview](https://github.com/edgesentry/edgesentry-commercial/blob/main/docs/programs/20260630-capvista-products/analysis/system-overview.md)
+- [monorepo plan §10](https://github.com/edgesentry/edgesentry-commercial/blob/main/docs/programs/20260630-capvista-products/analysis/monorepo-design-implementation-plan.md)
+- [commercial#169](https://github.com/edgesentry/edgesentry-commercial/pull/169)
