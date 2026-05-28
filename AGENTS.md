@@ -25,7 +25,8 @@ may still point at siblings.
 | `contracts/` | Shared schemas | this repo |
 | `shared/` | Fixtures (future) | this repo |
 | `ci/` | Monorepo CI | this repo |
-| `tools/` | Dev scripts | this repo |
+| `tools/` | Dev scripts (`make test-*`) | this repo |
+| `shared/fixtures/` | Golden `decision_hash` pins | this repo |
 
 ## Agent index (detailed docs)
 

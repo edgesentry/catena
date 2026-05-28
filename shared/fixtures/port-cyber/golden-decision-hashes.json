@@ -1,0 +1,18 @@
+{
+  "description": "Pinned decision_hash values for PoC fixtures (seed-stable eval).",
+  "port_call_id": "port-call-demo-sgsin",
+  "vessels": {
+    "vessel-hold": {
+      "outcome": "hold",
+      "decision_hash": "c8d2cca5e0e0f052d2cee1d6f5bb59f71902fc5f9cb5411603988c4ba90c90c3"
+    },
+    "vessel-clean": {
+      "outcome": "pass",
+      "decision_hash": "6fab58507c17045337ea2e97a8cbbf39f237edd504b92f4b953e6e4cbc2551c4"
+    },
+    "vessel-thread": {
+      "outcome": "pass",
+      "decision_hash": "e48dc0488bc0221d7836ea51e875fc7b8cb38e6535c114c2e560656ebdae613c"
+    }
+  }
+}

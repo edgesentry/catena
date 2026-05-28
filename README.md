@@ -22,3 +22,13 @@ Agent guidance entrypoint: `AGENTS.md`
   `agents/port_clearance/`
 
 See `pipeline/README.md`.
+
+## Verify locally (Phase C)
+
+```bash
+make test-all          # contracts + pipeline + document + apps
+make test-pipeline     # pytest tests/maritime_cyber
+make test-document     # cargo test clearance (sibling edgesentry-rs)
+```
+
+CI runs the same scripts per domain; see `ci/README.md`.
