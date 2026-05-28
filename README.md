@@ -16,12 +16,11 @@ Agent guidance entrypoint: `AGENTS.md`
 
 ## Phase status
 
-- **Phase A–C**: scaffold, pipeline migration, unified CI — done
-- **Phase D**: contract VERSION + golden pins, integration/e2e CI with `eds`
-- **W5 UI**: `apps/operations-console/` (tested in catena); program docs →
-  `edgesentry-commercial`
+- **Phase A–D**: scaffold through contract/integration CI — **done** ([#6](https://github.com/edgesentry/catena/pull/6))
+- **W5 UI**: `apps/operations-console/` (tested in catena)
+- **Next:** [decommission indago port-cyber duplicates](docs/DECOMMISSION.md) — [tracker #1](https://github.com/edgesentry/catena/issues/1)
 
-See `pipeline/README.md` and `ci/README.md`.
+See `pipeline/README.md`, `ci/README.md`, `docs/DECOMMISSION.md`.
 
 ## Verify locally
 
