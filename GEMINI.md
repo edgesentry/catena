@@ -1,2 +1,3 @@
-See ./AGENTS.md
- 
+# Gemini Guide
+
+See `./AGENTS.md`.

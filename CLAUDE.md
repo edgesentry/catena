@@ -1,2 +1,3 @@
-See ./AGENTS.md
- 
+# Claude Guide
+
+See `./AGENTS.md`.
