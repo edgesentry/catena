@@ -8,19 +8,16 @@ Agent guidance entrypoint: `AGENTS.md`
 
 - `apps/` - browser-facing products and frontends
 - `pipeline/` - deterministic data/evaluation pipelines
-- `document/` - rendering, sealing, and verification logic
+- `agents/` - E2E orchestration (e.g. port clearance; calls `eds` in sibling `edgesentry-rs`)
 - `contracts/` - canonical schemas and interface contracts
 - `shared/` - fixtures, common libraries, and shared UI components
-- `programs/` - program/submission documentation bundles
 - `ci/` - reusable CI assets
 - `tools/` - developer utilities and validation scripts
 
-## Phase A status
+## Phase status
 
-This repository currently contains the Phase A scaffold from migration tracker
-issue `#1`:
+- **Phase A** (scaffold): capability folders, contracts, CI path routing — done
+- **Pipeline**: `maritime_cyber` under `pipeline/` (package `pipeline`); run `uv run pytest tests/maritime_cyber`
+- **Remaining pointers**: `apps/` → `documaris`; render/seal → sibling `edgesentry-rs` via `agents/port_clearance/`
 
-- top-level capability folders
-- root governance files (`CODEOWNERS`, `.editorconfig`)
-- baseline contracts and validation script
-- CI skeleton with changed-path routing
+See `pipeline/README.md`.

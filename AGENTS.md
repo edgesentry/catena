@@ -13,14 +13,18 @@ linked detailed documents under `docs/agents/`.
 
 ## Repository map (high level)
 
-- `apps/` - browser-facing applications
-- `pipeline/` - deterministic data and evaluation pipelines
-- `document/` - rendering, sealing, and verification components
-- `contracts/` - canonical schemas and interface contracts
-- `shared/` - fixtures and shared libraries/components
-- `programs/` - program/submission documentation bundles
-- `ci/` - CI assets and workflow support
-- `tools/` - developer automation scripts
+`catena` is the **monorepo home** for port-cyber pipeline code; other domains may still point at siblings.
+
+| Path | Role | Canonical source |
+|------|------|------------------|
+| `pipeline/`, `agents/port_clearance/`, `tests/maritime_cyber/` | Port cyber pipeline (package `pipeline`) | **this repo** |
+| Clearance render / audit seal | `eds` CLI | `../edgesentry-rs` (`edgesentry-document`, `edgesentry-audit`) — invoked from `agents/port_clearance/`, not a `document/` tree in catena |
+| `apps/operations-console/` | Pointer to W5 templates | `../documaris` |
+| Program / submission docs | *(not in catena)* | `../edgesentry-commercial/docs/programs/` |
+| `contracts/` | Shared schemas in catena | this repo |
+| `shared/` | Cross-cutting fixtures (future) | this repo |
+| `ci/` | Monorepo CI | this repo |
+| `tools/` | Validation and dev scripts | this repo |
 
 ## Agent index (detailed docs)
 
