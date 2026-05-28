@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
-# Phase C — apps / documaris (pointer only; no vendored UI tests in catena yet).
+# operations-console UI contract tests (W5 templates, field map, dist HTML).
 set -euo pipefail
-echo "apps: no automated tests in catena (W5 templates live in ../documaris)"
-exit 0
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
+cd "${ROOT}"
+uv sync --extra test --quiet
+uv run pytest tests/apps -m "not integration" -q "$@"

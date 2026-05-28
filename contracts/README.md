@@ -7,6 +7,7 @@ Canonical interface contracts shared across pipeline, agents, and apps.
 - `facts-schema/facts.schema.json`
 - `manifest-schema/evaluation-manifest.schema.json`
 
-- `make test-contracts` — schema JSON integrity + `tests/contracts/` (golden
-  `decision_hash`, jsonschema validation of eval outputs)
-- `tools/scripts/validate-contracts.sh` — schema parse check only
+- `contracts/VERSION` — semantic version; must match
+  `shared/fixtures/port-cyber/golden-decision-hashes.json` (`contract_version`)
+- `contracts/CHANGELOG.md` — breaking vs compatible changes
+- `make test-contracts` — schema + drift + VERSION alignment

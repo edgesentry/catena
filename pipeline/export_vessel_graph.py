@@ -16,7 +16,7 @@ from pipeline.maritime_cyber.graph import (
 )
 
 _REPO_ROOT = Path(__file__).resolve().parents[1]
-_DOCUMARIS_DIST = _REPO_ROOT.parent / "documaris" / "dist"
+_OPERATIONS_CONSOLE_DIST = _REPO_ROOT / "apps" / "operations-console" / "dist"
 _CAPVISTA_SUBMISSION_ARTEFACTS = (
     _REPO_ROOT.parent
     / "edgesentry-commercial"
@@ -177,8 +177,9 @@ def write_vessel_graph_artifacts(
     asset_map_path: Path | None = None,
     cve_snapshot_path: Path | None = None,
     sbom_dir: Path | None = None,
-    copy_to_documaris_dist: bool = False,
+    copy_to_operations_console_dist: bool = False,
     copy_to_capvista_submission: bool = False,
+    copy_to_documaris_dist: bool | None = None,
 ) -> dict[str, Path]:
     """Write JSON + HTML impacted-path exports; return paths."""
     paths = impacted_paths
@@ -210,10 +211,13 @@ def write_vessel_graph_artifacts(
 
     result = {"json": json_path, "html": html_path}
 
-    if copy_to_documaris_dist:
-        copied = _copy_impacted_path_html(html_path, vessel_key, _DOCUMARIS_DIST)
+    if copy_to_documaris_dist is not None:
+        copy_to_operations_console_dist = copy_to_documaris_dist
+
+    if copy_to_operations_console_dist:
+        copied = _copy_impacted_path_html(html_path, vessel_key, _OPERATIONS_CONSOLE_DIST)
         if copied:
-            result["documaris_dist_html"] = copied
+            result["operations_console_dist_html"] = copied
 
     if copy_to_capvista_submission:
         copied = _copy_impacted_path_html(html_path, vessel_key, _CAPVISTA_SUBMISSION_ARTEFACTS)
@@ -229,9 +233,11 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--port-call-id", default="port-call-demo-sgsin")
     parser.add_argument("--output-dir", type=Path, default=DEFAULT_OUTPUT_DIR)
     parser.add_argument(
+        "--copy-to-operations-console-dist",
         "--copy-to-documaris-dist",
         action="store_true",
-        help="Also write documaris/dist/<vessel>_impacted-path.html",
+        dest="copy_to_operations_console_dist",
+        help="Also write apps/operations-console/dist/<vessel>_impacted-path.html",
     )
     parser.add_argument(
         "--copy-to-capvista-submission",
@@ -258,7 +264,7 @@ def main(argv: list[str] | None = None) -> int:
         impacted_paths=eval_result.facts["impacted_paths"],
         port_call_id=args.port_call_id,
         outcome=eval_result.outcome,
-        copy_to_documaris_dist=args.copy_to_documaris_dist,
+        copy_to_operations_console_dist=args.copy_to_operations_console_dist,
         copy_to_capvista_submission=args.copy_to_capvista_submission,
     )
     if args.json:

@@ -16,19 +16,23 @@ Agent guidance entrypoint: `AGENTS.md`
 
 ## Phase status
 
-- **Phase A** (scaffold): capability folders, contracts, CI — done
-- **Pipeline**: `maritime_cyber` under `pipeline/`; run maritime_cyber pytest
-- **Pointers**: `apps/` → `documaris`; render/seal → `edgesentry-rs` via
-  `agents/port_clearance/`
+- **Phase A–C**: scaffold, pipeline migration, unified CI — done
+- **Phase D**: contract VERSION + golden pins, integration/e2e CI with `eds`
+- **W5 UI**: `apps/operations-console/` (tested in catena); program docs →
+  `edgesentry-commercial`
 
-See `pipeline/README.md`.
+See `pipeline/README.md` and `ci/README.md`.
 
-## Verify locally (Phase C)
+## Verify locally
 
 ```bash
-make test-all          # contracts + pipeline + document + apps
-make test-pipeline     # pytest tests/maritime_cyber
-make test-document     # cargo test clearance (sibling edgesentry-rs)
+make test-all              # contracts + pipeline + apps + integration
+make test-pipeline         # unit tests only (no eds)
+make test-integration      # eds sign/verify/render integration
+make test-e2e vessel-hold  # full clearance smoke
 ```
 
-CI runs the same scripts per domain; see `ci/README.md`.
+Requires `../edgesentry-rs` (built `eds`) for `test-integration` / `test-e2e`.
+Run `cargo test` on edgesentry-rs in that repo.
+
+**Not in catena CI:** edgesentry-rs crate tests (`cargo test` in that repo).

@@ -19,8 +19,8 @@ may still point at siblings.
 | Area | Role | Source |
 |------|------|--------|
 | `pipeline/`, `agents/`, tests | Port cyber | **this repo** |
-| `eds` CLI | Render / seal | `../edgesentry-rs` |
-| `apps/operations-console/` | W5 templates | `../documaris` |
+| `eds` CLI | Render / seal (test in `edgesentry-rs` CI) | `../edgesentry-rs` |
+| `apps/operations-console/` | W5 clearance UI contract | **this repo** |
 | Program docs | *(not in catena)* | `../edgesentry-commercial` |
 | `contracts/` | Shared schemas | this repo |
 | `shared/` | Fixtures (future) | this repo |

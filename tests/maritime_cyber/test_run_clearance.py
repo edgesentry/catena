@@ -184,6 +184,7 @@ def test_run_clearance_full_e2e(tmp_path: Path) -> None:
         output_dir=tmp_path / "hold",
         write_graph=False,
         eds_bin=eds,
+        worm_root=tmp_path / "worm",
     )
     assert result.outcome == "hold"
     assert result.html_path is not None and result.html_path.is_file()

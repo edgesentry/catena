@@ -181,7 +181,7 @@ def run_clearance(
     skip_worm: bool = False,
     worm_root: Path | None = None,
     skip_graph_export: bool = False,
-    copy_graph_to_documaris: bool = False,
+    copy_graph_to_operations_console: bool = False,
     copy_graph_to_capvista_submission: bool = False,
     ai_narrative: bool = False,
     prior_decision_hash: str | None = None,
@@ -324,7 +324,7 @@ def run_clearance(
             asset_map_path=asset_map_path,
             cve_snapshot_path=cve_snapshot_path,
             sbom_dir=sbom_dir,
-            copy_to_documaris_dist=copy_graph_to_documaris,
+            copy_to_operations_console_dist=copy_graph_to_operations_console,
             copy_to_capvista_submission=copy_graph_to_capvista_submission,
         )
         impacted_paths_json = graph_exports["json"]
@@ -416,7 +416,7 @@ def run_hold_to_pass_scenario(
     skip_worm: bool = False,
     worm_root: Path | None = None,
     skip_graph_export: bool = False,
-    copy_graph_to_documaris: bool = False,
+    copy_graph_to_operations_console: bool = False,
     copy_graph_to_capvista_submission: bool = False,
     ai_narrative: bool = False,
 ) -> dict[str, Any]:
@@ -447,7 +447,7 @@ def run_hold_to_pass_scenario(
         skip_worm=skip_worm,
         worm_root=worm_root,
         skip_graph_export=skip_graph_export,
-        copy_graph_to_documaris=copy_graph_to_documaris,
+        copy_graph_to_operations_console=copy_graph_to_operations_console,
         copy_graph_to_capvista_submission=copy_graph_to_capvista_submission,
         ai_narrative=ai_narrative,
         lifecycle_event="E7",
@@ -499,7 +499,7 @@ def run_hold_to_pass_scenario(
         skip_worm=skip_worm,
         worm_root=worm_root,
         skip_graph_export=skip_graph_export,
-        copy_graph_to_documaris=copy_graph_to_documaris,
+        copy_graph_to_operations_console=copy_graph_to_operations_console,
         copy_graph_to_capvista_submission=copy_graph_to_capvista_submission,
         ai_narrative=ai_narrative,
         prior_decision_hash=baseline.decision_hash,
@@ -633,9 +633,11 @@ def main(argv: list[str] | None = None) -> int:
         help="Skip D4 impacted-path JSON/HTML export",
     )
     parser.add_argument(
+        "--copy-graph-to-operations-console",
         "--copy-graph-to-documaris",
         action="store_true",
-        help="Also write documaris/dist/<vessel>_impacted-path.html",
+        dest="copy_graph_to_operations_console",
+        help="Also write apps/operations-console/dist/<vessel>_impacted-path.html",
     )
     parser.add_argument(
         "--copy-graph-to-capvista-submission",
@@ -678,7 +680,7 @@ def main(argv: list[str] | None = None) -> int:
                 skip_worm=args.skip_worm,
                 worm_root=args.worm_root,
                 skip_graph_export=args.skip_graph_export,
-                copy_graph_to_documaris=args.copy_graph_to_documaris,
+                copy_graph_to_operations_console=args.copy_graph_to_operations_console,
                 copy_graph_to_capvista_submission=args.copy_graph_to_capvista_submission,
                 ai_narrative=args.ai_narrative,
             )
@@ -730,7 +732,7 @@ def main(argv: list[str] | None = None) -> int:
             skip_worm=args.skip_worm,
             worm_root=args.worm_root,
             skip_graph_export=args.skip_graph_export,
-            copy_graph_to_documaris=args.copy_graph_to_documaris,
+            copy_graph_to_operations_console=args.copy_graph_to_operations_console,
             copy_graph_to_capvista_submission=args.copy_graph_to_capvista_submission,
             ai_narrative=args.ai_narrative,
         )

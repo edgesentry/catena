@@ -118,11 +118,11 @@ def test_copy_impacted_path_html_skips_missing_parent(tmp_path: Path) -> None:
     assert evg._copy_impacted_path_html(src, "vessel-hold", dest_dir) is None
 
 
-def test_write_vessel_graph_artifacts_copy_to_documaris_dist(
+def test_write_vessel_graph_artifacts_copy_to_operations_console_dist(
     tmp_path: Path, monkeypatch: pytest.MonkeyPatch
 ) -> None:
-    bundle = tmp_path / "documaris-dist"
-    monkeypatch.setattr(evg, "_DOCUMARIS_DIST", bundle)
+    bundle = tmp_path / "operations-console-dist"
+    monkeypatch.setattr(evg, "_OPERATIONS_CONSOLE_DIST", bundle)
 
     graph = build_maritime_cyber_graph(["vessel-hold"])
     eval_result = evaluate_port_clearance("vessel-hold", graph_result=graph)
@@ -132,10 +132,10 @@ def test_write_vessel_graph_artifacts_copy_to_documaris_dist(
         prefix="vessel-hold_pc",
         impacted_paths=eval_result.facts["impacted_paths"],
         outcome="hold",
-        copy_to_documaris_dist=True,
+        copy_to_operations_console_dist=True,
     )
 
-    assert written["documaris_dist_html"] == bundle / "vessel-hold_impacted-path.html"
+    assert written["operations_console_dist_html"] == bundle / "vessel-hold_impacted-path.html"
     assert "capvista_submission_html" not in written
 
 
@@ -157,4 +157,4 @@ def test_write_vessel_graph_artifacts_copy_to_capvista_submission(
     )
 
     assert written["capvista_submission_html"] == bundle / "vessel-hold_impacted-path.html"
-    assert "documaris_dist_html" not in written
+    assert "operations_console_dist_html" not in written
